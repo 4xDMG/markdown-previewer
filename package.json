@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build-css": "node-sass --include-path scss styles/styles.scss styles/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,8 @@
     "babel-loader": "^6.2.10",
     "babel-preset-react": "^6.16.0",
     "html-webpack-plugin": "^2.25.0",
+    "node-sass": "^4.1.1",
+    "nodemon": "^1.11.0",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }

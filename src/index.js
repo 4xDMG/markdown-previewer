@@ -16,10 +16,10 @@ class App extends Component {
 	render() {
 		return (
 				<div>
-					<h1>Markdown Previewer</h1>
+					<h1 className="heading">Markdown Previewer</h1>
 					<div className="row">
 						<div className="col-md-6">
-							<textarea rows="10" cols="40" onChange={ event => this.markdownTextChange(event.target.value) } defaultValue = "Type your *markdown* here!"></textarea>
+							<textarea rows="20" cols="40" onChange={ event => this.markdownTextChange(event.target.value) } defaultValue = "Type your *markdown* here!"></textarea>
 						</div>
 						<div className="col-md-6">
 							<DisplayArea markdown = { this.state } />

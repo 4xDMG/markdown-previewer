@@ -8,7 +8,11 @@ const DisplayArea = (rawMarkdown) => {
 		return {__html: markdown }
 	}
 
-	return <span dangerouslySetInnerHTML={ markdownTranslator(rawMarkdown) } />;
+	return (
+		<div className="display-area">
+			<span dangerouslySetInnerHTML={ markdownTranslator(rawMarkdown) } />
+		</div>
+	);
 }
 
 export default DisplayArea;

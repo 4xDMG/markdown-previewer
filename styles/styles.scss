@@ -1,0 +1,40 @@
+$font-stack: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
+$font-color: #000033;
+
+#app {
+	font-family: $font-stack;
+	background-color: #666666;
+	min-height: 100vh;
+	top: -20px;
+}
+
+.heading {
+	padding: 20px;
+	text-align: center;
+	color: $font-color;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+textarea,
+.display-area {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	width: 80%;
+	height: 415px;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+.display-area {
+	overflow-y: scroll;
+}
+
+textarea {
+	display: block;
+	resize: none;
+	width: 80%;
+}
