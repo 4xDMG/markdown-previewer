@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { SyntheticEvent, useState } from "react";
+import { marked } from "marked";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [parsedMarkdown, setParsedMarkdown] = useState<string>("");
+
+	const onChange = (event: SyntheticEvent) => {
+		const target = event.target as HTMLTextAreaElement;
+
+		setParsedMarkdown(marked.parse(target.value));
+	};
+
+	return (
+		<div className="App">
+			<header className="App-header">
+				<h1>Markdown Previewer</h1>
+			</header>
+			<main>
+				<section>
+					<textarea data-testid="input__markdown" onChange={onChange} />
+				</section>
+				<section data-testid="ouput__markdown" dangerouslySetInnerHTML={{ __html: parsedMarkdown }}></section>
+			</main>
+		</div>
+	);
 }
 
 export default App;
